@@ -1,0 +1,26 @@
+body {
+    background-image: url("background.jpg");
+    font-family: 'Courier New', Courier, monospace;
+    color: white;
+    font-size: 45px
+  }
+
+  .center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+  }
+
+  .portrait {
+    height: 200px;
+    width: 200px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  h1 {
+    text-align: center;
+    font-size: 70px;
+  }
