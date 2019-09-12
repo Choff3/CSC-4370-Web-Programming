@@ -1,15 +1,14 @@
 body {
     background-image: url("background.jpg");
-    font-family: 'Courier New', Courier, monospace;
+    font-family: sans-serif;
     color: white;
-    font-size: 45px
+    font-size: 25px
   }
 
   .center {
     display: block;
     margin-left: auto;
     margin-right: auto;
-    width: 50%;
   }
 
   .portrait {
@@ -23,4 +22,38 @@ body {
   h1 {
     text-align: center;
     font-size: 70px;
+  }
+
+  h5 {
+    font-size: 45px;
+    page-break-inside: avoid;
+    page-break-after: avoid;
+  }
+
+  span {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width:13%;
+    font-size: 30px
+  }
+
+  a {
+    color: white;
+  }
+
+  th {
+    color: blue;
+  }
+
+  tr:nth-child(even) {
+    background-color: black;
+  }
+
+  tr:nth-child(odd) {
+    background-color: gray;
+  }
+
+  table {
+    width: 50%;
   }
