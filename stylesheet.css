@@ -1,5 +1,5 @@
 body {
-    background-image: url("background.jpg");
+    background-image: url("images/background.jpg");
     font-family: sans-serif;
     color: white;
     font-size: 25px
@@ -21,13 +21,7 @@ body {
   
   h1 {
     text-align: center;
-    font-size: 70px;
-  }
-
-  h5 {
-    font-size: 45px;
-    page-break-inside: avoid;
-    page-break-after: avoid;
+    font-size: 50px;
   }
 
   span {
