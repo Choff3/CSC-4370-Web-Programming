@@ -58,5 +58,5 @@ body {
 
   .red {
     color: red;
-    font-weight: bold;
+    font: bold;
   }
