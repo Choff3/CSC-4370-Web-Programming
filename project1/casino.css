@@ -58,35 +58,16 @@ body {
     margin: auto;
 }
 
-/* .card1 {
-    width: 150px;
-    margin: auto;
-    position: fixed;
-    bottom: 300;
-    right: 750px;
-}
-
-.card1:hover {
-    animation-name: fade;
-}
-
-.card1 img {
-    width: 100%;
-    margin: auto;
-} */
-
 .flip-card1 {
-    /* background-color: transparent; */
     margin: auto;
     position: fixed;
     bottom: 440px;
     right: 750px;
     width: 150px;
     height: 90px;
-    perspective: 1000px; /* Remove this if you don't want the 3D effect */
+    perspective: 1000px;
   }
   
-  /* This container is needed to position the front and back side */
   .flip-card-inner {
     position: relative;
     width: 150px;
@@ -95,12 +76,10 @@ body {
     transform-style: preserve-3d;
   }
   
-  /* Do an horizontal flip when you move the mouse over the flip box container */
   .flip-card1:hover .flip-card-inner {
     transform: rotateY(180deg);
   }
-  
-  /* Position the front and back side */
+
   .flip-card-front, .flip-card-back {
     position: absolute;
     width: 150px;
@@ -108,17 +87,20 @@ body {
     backface-visibility: hidden;
   }
   
-  /* Style the back side */
   .flip-card-back {
     transform: rotateY(180deg);
   }
 
-  /* .flip-card2 {
+   .flip-card2 {
     margin: auto;
     position: fixed;
     bottom: 440px;
-    right: 750px;
+    right: 940px;
     width: 150px;
     height: 90px;
     perspective: 1000px;
-  } */
+  }
+
+  .flip-card2:hover .flip-card-inner {
+    transform: rotateY(180deg);
+  }
