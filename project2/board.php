@@ -7,13 +7,15 @@
     href = "/project2/style.css" />
 </head>
 
-<!-- <img src="/project2/jeopardy-logo.jpg" alt="Jeopardy!"> -->
+<?php
+  include "questions.php";
+?>
 
 <div class="container">
   <div class="row">
     <?php
       for($i=1;$i<7;$i++){
-        echo '<div class="square">'.$i.'</div>';
+        echo '<div class="square">'.$questions[$i-1][0].'</div>';
       }
     ?>
   </div>
