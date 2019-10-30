@@ -14,43 +14,43 @@
 <div class="container">
   <div class="row">
     <?php
-      for($i=1;$i<7;$i++){
-        echo '<div class="square">'.$questions[$i-1][0].'</div>';
+      for($i=0;$i<6;$i++){
+        echo '<div class="square"><p class="category">'.$questions[$usedCats[$i]][0].'</p></div>';
       }
     ?>
   </div>
   <div class="row">
     <?php
-      for($i=7;$i<13;$i++){
-        echo '<div class="square">$100</div>';
+      for($i=6;$i<12;$i++){
+        echo '<div class="square"><a href="/project2/question.php?id='.$i.'">$100</a></div>';
       }
     ?>
   </div>
   <div class="row">
     <?php
-      for($i=13;$i<19;$i++){
-        echo '<div class="square">$200</div>';
+      for($i=12;$i<18;$i++){
+        echo '<div class="square"><a href="/project2/question.php?id='.$i.'">$200</a></div>';
       }
     ?>
   </div>
   <div class="row">
     <?php
-      for($i=19;$i<25;$i++){
-        echo '<div class="square">$300</div>';
+      for($i=18;$i<24;$i++){
+        echo '<div class="square"><a href="/project2/question.php?id='.$i.'">$300</a></div>';
       }
     ?>
   </div>
   <div class="row">
     <?php
-      for($i=25;$i<31;$i++){
-        echo '<div class="square">$400</div>';
+      for($i=24;$i<30;$i++){
+        echo '<div class="square"><a href="/project2/question.php?id='.$i.'">$400</a></div>';
       }
     ?>
   </div>
   <div class="row">
     <?php
-      for($i=31;$i<37;$i++){
-        echo '<div class="square">$500</div>';
+      for($i=30;$i<36;$i++){
+        echo '<div class="square"><a href="/project2/question.php?id='.$i.'">$500</a></div>';
       }
     ?>
   </div>
