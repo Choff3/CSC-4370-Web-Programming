@@ -7,6 +7,13 @@ body {
     right:0px;
 }
 
+.logo {
+    position: fixed;
+    height: 99%;
+    width: 99%;
+    text-align: center;
+}
+
 .container {
     display: grid;
     padding: 50px;
@@ -17,7 +24,6 @@ body {
 .row {
     display: grid;
     grid: repeat(1, 100%) / auto-flow;
-    /* border: 5px solid black; */
 }
   
 .row > .square {
@@ -26,16 +32,8 @@ body {
     text-align: center;
     color: yellow;
     font-size: 3em;
-    /* size: 20%; */
 }
-  
-/* @media (orientation: portrait) {
-    
-    .container {
-      transform: rotate(90deg) translate(35%);
-    }
-    
-    .row > .square {
-      transform: rotate(-90deg);
-    }
-} */
+
+img:hover {
+    opacity: 0.9;
+}
