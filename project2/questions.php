@@ -16,9 +16,6 @@
             continue;
         }
     }
-
-    // var_dump($questionPool);
-    // exit;
     
     $usedCats=array();
     while(sizeof($usedCats)!=6){

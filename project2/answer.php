@@ -12,12 +12,19 @@
 
     $a=substr($questions[$cat][$question],$dash+2);
 
-    // $answered=$_SESSION["answered"];
-    // $answered[$cat][$question]=1;
-    // $_SESSION["answered"]=$answered;
-
     $_SESSION["answered"][$cat][$question]=1;
 
-    echo '<a href="board.php">'.$a.'</a>';
-
 ?>
+
+<html>
+<head>
+  <meta charset = "UTF-8">
+  <title>Jeopardy!</title>
+  <link rel = "stylesheet"
+    type = "text/css"
+    href = "card.css" />
+</head>
+<?php
+    echo '<a href="board.php">'.$a.'</a>';
+?>
+</html>

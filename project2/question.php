@@ -12,6 +12,17 @@ $dash=strpos($questions[$cat][$question]," - ");
 
 $q=substr($questions[$cat][$question],0,$dash);
 
-echo '<a href="answer.php?id='.$_REQUEST['id'].'">'.$q.'</a>';
-
 ?>
+
+<html>
+<head>
+  <meta charset = "UTF-8">
+  <title>Jeopardy!</title>
+  <link rel = "stylesheet"
+    type = "text/css"
+    href = "card.css" />
+</head>
+<?php
+    echo '<a href="answer.php?id='.$_REQUEST['id'].'">'.$q.'</a>';
+?>
+</html>
