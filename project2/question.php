@@ -8,9 +8,9 @@ $question=substr($_REQUEST['id'],2,1);
 session_start(); 
 $questions=$_SESSION["questions"];
 
-$dash=strpos($questions[$cat][$question],"-");
+$dash=strpos($questions[$cat][$question]," - ");
 
-$q=substr($questions[$cat][$question],0,$dash-1);
+$q=substr($questions[$cat][$question],0,$dash);
 
 echo '<a href="answer.php?id='.$_REQUEST['id'].'">'.$q.'</a>';
 
