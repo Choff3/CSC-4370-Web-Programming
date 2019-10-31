@@ -12,6 +12,7 @@
   session_start(); 
   $questions=$_SESSION["questions"]; 
   $answered=$_SESSION["answered"]; 
+  //start the session and set local variables to the session variables
   
 ?>
 
@@ -21,6 +22,7 @@
       for($i=0;$i<6;$i++){
         echo '<div class="square"><p class="category">'.$questions[$i][0].'</p></div>';
       }
+      //loop through outputting six squares on the first row and output the names of the categories
     ?>
   </div>
   <div class="row">
@@ -31,6 +33,9 @@
         else
           echo '<div class="square">&nbsp;&nbsp;&nbsp;&nbsp;</div>';
       }
+      //loop through the next row of squares and put the corresponding questions on each category's column
+      //output a dollar amount
+      //repeat for each row
     ?>
   </div>
   <div class="row">
