@@ -28,6 +28,11 @@ div#memory_board{
 	animation: mymove 120s;
 	animation-play-state: paused;
 	}
+
+	/* image {
+		width: 100px;
+		height: 100px;
+	} */
 	
 	
 	@-webkit-keyframes mymove {
