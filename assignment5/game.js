@@ -17,14 +17,23 @@ Array.prototype.memory_tile_shuffle = function(){
         this[i] = temp;
     }
 }
-function newBoard(){
+function newBoard(ms){
     tiles_flipped = 0;
     var output = '';
     memory_array.memory_tile_shuffle();
+
     for(var i = 0; i < memory_array.length; i++){
-        output += '<div id="tile_'+i+'" onclick="memoryFlipTile(this,\''+memory_array[i]+'\')"></div>';
+        output += '<div id="tile_'+i+'">'+memory_array[i]+'</div>';
     }
     document.getElementById('memory_board').innerHTML = output;
+    output="";
+
+    setTimeout(function(){
+        for(var i = 0; i < memory_array.length; i++){
+            output += '<div id="tile_'+i+'" onclick="memoryFlipTile(this,\''+memory_array[i]+'\')"></div>';
+        }
+        document.getElementById('memory_board').innerHTML = output;
+    }, ms); 
 }
 function memoryFlipTile(tile,val){
     if(tile.innerHTML == "" && memory_values.length < 2){
@@ -67,3 +76,12 @@ function memoryFlipTile(tile,val){
         }
     }
 }
+
+function sleep(milliseconds) {
+    var start = new Date().getTime();
+    for (var i = 0; i < 1e7; i++) {
+      if ((new Date().getTime() - start) > milliseconds){
+        break;
+      }
+    }
+  }
