@@ -1,20 +1,20 @@
 div#memory_board{
 	background:#CCC;
 	border:#999 1px solid;
-	width:800px;
-	height:540px;
+	width:862px;
+	height:570px;
 	padding:24px;
 	margin:0px auto;
 	}
 	div#memory_board > div{
 	background: url(tile_bg.jpg) no-repeat;
-	border:#000 1px solid;
-	width:71px;
-	height:71px;
+	border:#000 .1px solid;
+	width:100px;
+	height:100px;
 	float:left;
 	margin:10px;
-	padding:20px;
-	font-size:64px;
+	padding:10px;
+	/* font-size:64px; */
 	cursor:pointer;
 	text-align:center;
 	}
@@ -28,13 +28,7 @@ div#memory_board{
 	animation: mymove 120s;
 	animation-play-state: paused;
 	}
-
-	/* image {
-		width: 100px;
-		height: 100px;
-	} */
-	
-	
+		
 	@-webkit-keyframes mymove {
 	from {left: 0px;}
 	to {left: 100px;}

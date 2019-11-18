@@ -37,8 +37,7 @@ function newBoard(ms){
 }
 function memoryFlipTile(tile,val){
     if(tile.innerHTML == "" && memory_values.length < 2){
-        tile.style.background = '#FFF';
-        tile.innerHTML = '<img src=images/'+val+'.jpg>'//val;
+        tile.innerHTML = '<img src=images/'+val+'.jpg>';
         if(memory_values.length == 0){
             memory_values.push(val);
             memory_tile_ids.push(tile.id);
