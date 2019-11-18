@@ -1,10 +1,9 @@
-document.getElementById("myBtn1").addEventListener("click", displayInfo);
-
-
-function displayInfo() {
-    document.getElementById("demo").innerHTML = "welcome to memory game \n you will have to choose and match the pictures accordingly to win the game \n click on the pictures";
-}
-var memory_array = ['1','1','2','2','3','3','4','4','5','5','6','6','7','7','8','8','9','9','10','10','11','11','12','12'];
+if(document.getElementById("numPics8").checked)
+    var memory_array = ['1','1','2','2','3','3','4','4','5','5','6','6','7','7','8','8'];
+if(document.getElementById("numPics10").checked)
+    var memory_array = ['1','1','2','2','3','3','4','4','5','5','6','6','7','7','8','8','9','9','10','10'];
+if(document.getElementById("numPics12").checked)
+    var memory_array = ['1','1','2','2','3','3','4','4','5','5','6','6','7','7','8','8','9','9','10','10','11','11','12','12'];
 var memory_values = [];
 var memory_tile_ids = [];
 var tiles_flipped = 0;
@@ -17,7 +16,7 @@ Array.prototype.memory_tile_shuffle = function(){
         this[i] = temp;
     }
 }
-function newBoard(ms){
+function newBoard(difficulty){
     tiles_flipped = 0;
     var output = '';
     memory_array.memory_tile_shuffle();
@@ -33,7 +32,8 @@ function newBoard(ms){
             output += '<div id="tile_'+i+'" onclick="memoryFlipTile(this,\''+memory_array[i]+'\')"></div>';
         }
         document.getElementById('memory_board').innerHTML = output;
-    }, ms); 
+    }, difficulty);
+    timer();
 }
 function memoryFlipTile(tile,val){
     if(tile.innerHTML == "" && memory_values.length < 2){
@@ -74,4 +74,33 @@ function memoryFlipTile(tile,val){
             }
         }
     }
+}
+
+function timer(){
+    if(document.getElementById("numPics8").checked)
+        var time = 120000;
+    if(document.getElementById("numPics10").checked)
+        var time = 150000;
+    if(document.getElementById("numPics12").checked)
+        var time = 180000;
+    
+    var countDownDate = new Date().getTime()+time;
+
+    var x = setInterval(function() {
+        var now = new Date().getTime();
+        var distance = countDownDate - now;
+        var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+        var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+        var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+        document.getElementById("timer").innerHTML = minutes + ":" + seconds;
+
+        if (distance < 0) {
+            clearInterval(x);
+            document.getElementById("timer").innerHTML = "Out of time!";
+            alert("You ran out of time.");
+            location.reload();
+        }
+    }, 1000);
 }
