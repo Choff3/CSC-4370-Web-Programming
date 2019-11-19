@@ -65,11 +65,8 @@ function memoryFlipTile(tile,val){
                 function flip2Back(){
                     var tile_1 = document.getElementById(memory_tile_ids[0]);
                     var tile_2 = document.getElementById(memory_tile_ids[1]);
-                    //tile_1.style.background = 'url(tile_bg.jpg) no-repeat';
                     tile_1.innerHTML = "";
-                    //tile_2.style.background = 'url(tile_bg.jpg) no-repeat';
                     tile_2.innerHTML = "";
-                    // Clear both arrays
                     memory_values = [];
                     memory_tile_ids = [];
                 }
