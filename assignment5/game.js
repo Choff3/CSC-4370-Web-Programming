@@ -3,7 +3,7 @@ var clickedTiles = [];
 var clickedTileIds = [];
 var flipped = 0;
 //declare variables for storing the numbers associated with images, chosen tiles, ids and another variable for number of tiles flipped
-Array.prototype.memory_tile_shuffle = function(){//function for shuffling the tiles
+Array.prototype.randomize = function(){//function for shuffling the tiles
     var i = this.length;
     var rand;
     var temp;
@@ -16,10 +16,10 @@ Array.prototype.memory_tile_shuffle = function(){//function for shuffling the ti
         //store the chosen random index in the current iteration index
     }
 }
-function newBoard(difficulty){
+function newGame(difficulty){
     flipped = 0;
     var output = '';
-    tileValues.memory_tile_shuffle();
+    tileValues.randomize();
     //initialize tiles flipped and html output variable and randomize the tiles array
 
     for(var i = 0; i < tileValues.length; i++){
@@ -31,7 +31,7 @@ function newBoard(difficulty){
 
     setTimeout(function(){
         for(var i = 0; i < tileValues.length; i++){
-            output += '<div id="tile_'+i+'" onclick="memoryFlipTile(this,\''+tileValues[i]+'\')"></div>';//output tile with the flip tile method
+            output += '<div id="tile_'+i+'" onclick="flip(this,\''+tileValues[i]+'\')"></div>';//output tile with the flip tile method
         }
         document.getElementById('board').innerHTML = output;
     }, difficulty);
@@ -42,7 +42,7 @@ function newBoard(difficulty){
     }, difficulty-500);
     //set another delay and start the timer by calling the timer function
 }
-function memoryFlipTile(tile,value){
+function flip(tile,value){
     if(tile.innerHTML == "" && clickedTiles.length < 2){//if the clicked tiles is less than 2
         tile.innerHTML = '<img src=images/'+value+'.jpg>';
         if(clickedTiles.length == 0){
@@ -65,7 +65,7 @@ function memoryFlipTile(tile,value){
                 }//if all tiles have been flipped, display alert and reload the page
             }
             else {
-                function flip2Back(){
+                function flipBack(){
                     var tile1 = document.getElementById(clickedTileIds[0]);
                     var tile2 = document.getElementById(clickedTileIds[1]);
                     tile1.innerHTML = "";
@@ -74,7 +74,7 @@ function memoryFlipTile(tile,value){
                     clickedTileIds = [];
                 }
                 //if the tiles are not a match, clear the images and the arrays
-                setTimeout(flip2Back, 1000);//wait 1 second before flipping the tiles back over
+                setTimeout(flipBack, 1000);//wait 1 second before flipping the tiles back over
             }
         }
     }
