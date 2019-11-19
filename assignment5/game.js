@@ -1,20 +1,23 @@
 var tileValues = [];
-var memory_values = [];
-var memory_tile_ids = [];
-var tiles_flipped = 0;
+var clickedTiles = [];
+var clickedTileIds = [];
+var flipped = 0;
 //declare variables for storing the numbers associated with images, chosen tiles, ids and another variable for number of tiles flipped
 Array.prototype.memory_tile_shuffle = function(){//function for shuffling the tiles
-    var i = this.length, j, temp;//var for iteration, random num and temp value
+    var i = this.length;
+    var rand;
+    var temp;
+    //var for iteration, random num and temp value
     while(--i > 0){
-        j = Math.floor(Math.random() * (i+1));//set random integer between 1 and the length of the tiles array
-        temp = this[j];//store the chosen index
-        this[j] = this[i];
+        rand = Math.floor(Math.random() * (i+1));//set random integer between 1 and the length of the tiles array
+        temp = this[rand];//store the chosen index
+        this[rand] = this[i];
         this[i] = temp;
         //store the chosen random index in the current iteration index
     }
 }
 function newBoard(difficulty){
-    tiles_flipped = 0;
+    flipped = 0;
     var output = '';
     tileValues.memory_tile_shuffle();
     //initialize tiles flipped and html output variable and randomize the tiles array
@@ -40,35 +43,35 @@ function newBoard(difficulty){
     //set another delay and start the timer by calling the timer function
 }
 function memoryFlipTile(tile,value){
-    if(tile.innerHTML == "" && memory_values.length < 2){//if the clicked tiles is less than 2
+    if(tile.innerHTML == "" && clickedTiles.length < 2){//if the clicked tiles is less than 2
         tile.innerHTML = '<img src=images/'+value+'.jpg>';
-        if(memory_values.length == 0){
-            memory_values.push(value);
-            memory_tile_ids.push(tile.id);
+        if(clickedTiles.length == 0){
+            clickedTiles.push(value);
+            clickedTileIds.push(tile.id);
         }
         //push to chosen and id's array
-        else if(memory_values.length == 1){
-            memory_values.push(value);
-            memory_tile_ids.push(tile.id);
+        else if(clickedTiles.length == 1){
+            clickedTiles.push(value);
+            clickedTileIds.push(tile.id);
             //push to chosen and id's array
-            if(memory_values[0] == memory_values[1]){//if the tiles numbers are a match
-                tiles_flipped += 2;
-                memory_values = [];
-                memory_tile_ids = [];
+            if(clickedTiles[0] == clickedTiles[1]){//if the tiles numbers are a match
+                flipped += 2;
+                clickedTiles = [];
+                clickedTileIds = [];
                 //increase the tiles flipped count and clear the 2 arrays
-                if(tiles_flipped == tileValues.length){
+                if(flipped == tileValues.length){
                     alert("You Win!");
                     location.reload();
                 }//if all tiles have been flipped, display alert and reload the page
             }
             else {
                 function flip2Back(){
-                    var tile_1 = document.getElementById(memory_tile_ids[0]);
-                    var tile_2 = document.getElementById(memory_tile_ids[1]);
-                    tile_1.innerHTML = "";
-                    tile_2.innerHTML = "";
-                    memory_values = [];
-                    memory_tile_ids = [];
+                    var tile1 = document.getElementById(clickedTileIds[0]);
+                    var tile2 = document.getElementById(clickedTileIds[1]);
+                    tile1.innerHTML = "";
+                    tile2.innerHTML = "";
+                    clickedTiles = [];
+                    clickedTileIds = [];
                 }
                 //if the tiles are not a match, clear the images and the arrays
                 setTimeout(flip2Back, 1000);//wait 1 second before flipping the tiles back over
