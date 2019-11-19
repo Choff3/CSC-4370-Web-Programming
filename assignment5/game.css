@@ -1,4 +1,4 @@
-div#memory_board{
+div#board{
 	background:#CCC;
 	border:#999 1px solid;
 	width:862px;
@@ -6,7 +6,7 @@ div#memory_board{
 	padding:24px;
 	margin:0px auto;
 	}
-	div#memory_board > div{
+	div#board > div{
 	background: url(tile_bg.jpg) no-repeat;
 	border:#000 .1px solid;
 	width:100px;
