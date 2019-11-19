@@ -72,7 +72,7 @@ for (var i = 0; i < empNum; i++) {//loop for number of rows
     //insert cell for weekly pay
 }
 
-var div = document.getElementById("myDiv");//add table to the body
+var div = document.getElementById("table");//add table to the body
 
 div.appendChild(table);//displaying total pay
 
