@@ -1,9 +1,4 @@
-if(document.getElementById("numPics8").checked)
-    var memory_array = ['1','1','2','2','3','3','4','4','5','5','6','6','7','7','8','8'];
-if(document.getElementById("numPics10").checked)
-    var memory_array = ['1','1','2','2','3','3','4','4','5','5','6','6','7','7','8','8','9','9','10','10'];
-if(document.getElementById("numPics12").checked)
-    var memory_array = ['1','1','2','2','3','3','4','4','5','5','6','6','7','7','8','8','9','9','10','10','11','11','12','12'];
+var memory_array = [];
 var memory_values = [];
 var memory_tile_ids = [];
 var tiles_flipped = 0;
@@ -33,7 +28,10 @@ function newBoard(difficulty){
         }
         document.getElementById('memory_board').innerHTML = output;
     }, difficulty);
-    timer();
+
+    setTimeout(function(){
+        timer();
+    }, difficulty-500);
 }
 function memoryFlipTile(tile,val){
     if(tile.innerHTML == "" && memory_values.length < 2){
@@ -89,12 +87,10 @@ function timer(){
     var x = setInterval(function() {
         var now = new Date().getTime();
         var distance = countDownDate - now;
-        var days = Math.floor(distance / (1000 * 60 * 60 * 24));
-        var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
         var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
         var seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
-        document.getElementById("timer").innerHTML = minutes + ":" + seconds;
+        document.getElementById("timer").innerHTML = '<b>'+ minutes + ":" + seconds+'</b>';
 
         if (distance < 0) {
             clearInterval(x);
@@ -103,4 +99,13 @@ function timer(){
             location.reload();
         }
     }, 1000);
+}
+
+function radioCheck(){
+    if(document.getElementById("numPics8").checked)
+        memory_array = ['1','1','2','2','3','3','4','4','5','5','6','6','7','7','8','8'];
+    if(document.getElementById("numPics10").checked)
+        memory_array = ['1','1','2','2','3','3','4','4','5','5','6','6','7','7','8','8','9','9','10','10'];
+    if(document.getElementById("numPics12").checked)
+        memory_array = ['1','1','2','2','3','3','4','4','5','5','6','6','7','7','8','8','9','9','10','10','11','11','12','12'];
 }

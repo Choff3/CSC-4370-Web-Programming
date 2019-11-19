@@ -6,13 +6,13 @@
 <body>
     <h1>Memory Game</h1>
     <p>Select the number of tiles and difficulty level. Match all the images within the time limit to win.</p>
-    <input type="radio" id="numPics12" name="numPics" value="12" checked> 12 Pictures<br>
-    <input type="radio" id="numPics10" name="numPics" value="10"> 10 Pictures<br>
-    <input type="radio" id="numPics8" name="numPics" value="8"> 8 Pictures <br> 
+    <input type="radio" id="numPics12" name="numPics" value="12" onclick='radioCheck()'> 12 Pictures<br>
+    <input type="radio" id="numPics10" name="numPics" value="10" onclick='radioCheck()'> 10 Pictures<br>
+    <input type="radio" id="numPics8" name="numPics" value="8" onclick='radioCheck()'> 8 Pictures <br> 
     <button id="easyButton" onclick='newBoard(8000)'>Easy</button>
     <button id="mediumButton" onclick='newBoard(5000)'>Medium</button>
     <button id="hardButton" onclick='newBoard(3000)'>Hard</button>
-    <p id="timer"></p>
+    <h2 id="timer"></h2>
     <div id="memory_board"></div>
     <script src='game.js'></script>
 </body>
