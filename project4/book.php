@@ -70,7 +70,7 @@ include ("nav.php")
 <tr>
 <td><p><font color="Cornsilk" size="5"> Select Origin:</font></p></td>&nbsp;&nbsp;
 <td><select id="source" align="center" name="source">
-<option value="None" disabled selected>------Select Origin------</option>
+<option value="None" disabled selected>Select Origin</option>
 <option value="Atlanta">Atlanta</option>
 <option value="New York">New York</option>
 <option value="Chicago">Chicago</option>
