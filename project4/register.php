@@ -5,14 +5,14 @@ if(!$conn){
 	echo "<script type='text/javascript'>alert('Database failed');</script>";
   	die('Could not connect: '.mysqli_connect_error());  
 }
-if (isset($_pOST['submit']))
+if (isset($_POST['submit']))
 {
-$fname=$_pOST['fname'];
-$lname=$_pOST['lname'];
-$age=$_pOST['age'];
-$mob=$_pOST['mob'];
-$email=$_pOST['email'];
-$pw=$_pOST['pw'];
+$fname=$_POST['fname'];
+$lname=$_POST['lname'];
+$age=$_POST['age'];
+$mob=$_POST['mob'];
+$email=$_POST['email'];
+$pw=$_POST['pw'];
 $sql = "INSERT INTO passenger(Fname,Lname,age,mno,email,password) VALUES ('$fname', '$lname', '$age', '$mob','$email', '$pw');";
 	if(mysqli_query($conn, $sql))
 {  
