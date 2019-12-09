@@ -49,23 +49,18 @@ html {
 	border-radius: 5px;
  	padding: 7px 7px 7px 7px;
  	box-shadow: inset -1px -1px rgba(0,0,0,0.5);
- 	font-family:"Comic Sans MS", cursive, sans-serif;
 	font-size: 15px;
 }
 #welcometext	{
-	font-family:"Comic Sans MS", cursive, sans-serif;
 	font-size: 50px;
 }
 #registertext	{
-	font-family:"Comic Sans MS", cursive, sans-serif;
 	font-size: 25px;
 }
 #fillertext	{
-	font-family:"Comic Sans MS", cursive, sans-serif;
 	font-size: 35px;
 }
 #nav	{
-    font-family:"Comic Sans MS", cursive, sans-serif;
     font-size: 17px;
 }
 a:link{color:blue}
@@ -91,7 +86,6 @@ a:hover {color:black}
     background-color: rgba(0,0,0,0);
     padding: 7px 7px 7px 7px;
     box-shadow: inset -1px -1px rgba(0,0,0,0.5);
-    font-family:"Comic Sans MS", cursive, sans-serif;
     font-size: 17px;
     margin:auto;
     margin-top: 20px;
